@@ -6,6 +6,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import { getMovieImages } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
+import React from "react";
 
 
 const TemplateMoviePage = ({ movie, children }) => {
@@ -26,12 +27,12 @@ const TemplateMoviePage = ({ movie, children }) => {
 
 
 
-  useEffect(() => {
-    getMovieImages(movie.id).then((images) => {
-      setImages(images);
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   getMovieImages(movie.id).then((images) => {
+  //     setImages(images);
+  //   });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <>
