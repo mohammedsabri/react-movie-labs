@@ -15,6 +15,8 @@ import { Link } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import React, { useContext  } from "react";
 import { MoviesContext } from "../../contexts/moviesContext";
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+
 
 
 export default function MovieCard({ movie, action }) { 
@@ -70,6 +72,11 @@ export default function MovieCard({ movie, action }) {
             </Typography>
           </Grid>
         </Grid>
+        <Typography variant="h5">{movie.title}</Typography>
+        {/* PlaylistAdd icon */}
+        <IconButton aria-label="add to watch list">
+          <PlaylistAddIcon />
+        </IconButton>
       </CardContent>
 
   <CardActions disableSpacing>
