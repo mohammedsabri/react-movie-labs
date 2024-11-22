@@ -73,21 +73,28 @@ export const getMovie = (args) => {
       });
   };
 
-  export const getUpcomingMovies = () => {
+  export const getTrendingMovies =  (page = 1) => {
     return fetch(
-      `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
-    ).then((response) => {
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=${page}`
+    )
+    .then((response) => {
       if (!response.ok) {
-        return response.json().then((error) => {
-          throw new Error(error.status_message || "Something went wrong");
-        });
+        throw new Error(response.json().message);
       }
       return response.json();
     })
     .catch((error) => {
-        throw error
-    });
+      throw error
+   });
   };
+
+
+  export const getUpcomingMovies = async (page = 1) => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=${page}`
+    ).then((res) => res.json());
+  };
+
   export const getPopularMovies = (page = 1) => {
 
     return fetch(

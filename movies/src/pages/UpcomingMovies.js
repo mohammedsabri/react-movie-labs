@@ -1,0 +1,40 @@
+import React, { useState } from "react";
+import { getUpcomingMovies } from "../api/tmdb-api";
+import PageTemplate from '../components/templateMovieListPage';
+import { useQuery } from 'react-query';
+import Spinner from '../components/spinner';
+import AddToToWatchListIcon from '../components/cardIcons/addToToWatchlist';
+import Pagination from "@mui/material/Pagination";
+
+const UpcomingMoviesPage = () => {
+  const [page, setPage] = useState(1);
+
+  const { data, error, isLoading, isError } = useQuery(['upcoming', page], () => getUpcomingMovies(page), {
+    keepPreviousData: true, // Use this option to keep displaying the current data during loading of new page data
+  });
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  if (isError) {
+    return <h1>{error.message}</h1>;
+  }
+  const movies = data.results;
+
+  // Handle the page change
+const handlePageChange = (event, value) => {
+  setPage(value); // Set the page to the new value
+};
+
+  return (
+    <PageTemplate
+      title="Upcoming Movies"
+      movies={movies}
+      action={(movie) => {
+        return <AddToToWatchListIcon movie={movie} />;
+      }}
+    />
+  );
+};
+export default UpcomingMoviesPage;
