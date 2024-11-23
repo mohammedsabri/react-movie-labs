@@ -4,7 +4,7 @@ import { getTrendingMovies } from "../api/tmdb-api";
 import PageTemplate from "../components/templateMovieListPage";
 import Spinner from "../components/spinner";
 import AddToToWatchListIcon from "../components/cardIcons/addToToWatchlist";
-// import Pagination from "@mui/material/Pagination";
+import Pagination from "@mui/material/Pagination";
 
 const TrendingMoviesPage = () => {
   const [page, setPage] = useState(1); // State for pagination
@@ -45,7 +45,7 @@ const TrendingMoviesPage = () => {
   }
 
   const movies = data.results; // Extract movies from API response
-  // const totalPages = data.total_pages; // Extract total pages for pagination
+  const totalPages = data.total_pages; // Extract total pages for pagination
 
   // Handle page change
   const handlePageChange = (event, value) => {
@@ -64,7 +64,7 @@ const TrendingMoviesPage = () => {
         )}
       />
       {/* Pagination component */}
-      {/* <Pagination
+      <Pagination
         count={totalPages}
         page={page}
         onChange={handlePageChange}
@@ -77,7 +77,7 @@ const TrendingMoviesPage = () => {
           justifyContent: "center",
           display: "flex",
         }}
-      /> */}
+      />
     </>
   );
 };

@@ -21,20 +21,38 @@ const UpcomingMoviesPage = () => {
     return <h1>{error.message}</h1>;
   }
   const movies = data.results;
+  const totalPages = data.total_pages;
+
 
   // Handle the page change
 const handlePageChange = (event, value) => {
   setPage(value); // Set the page to the new value
 };
 
-  return (
-    <PageTemplate
-      title="Upcoming Movies"
-      movies={movies}
-      action={(movie) => {
-        return <AddToToWatchListIcon movie={movie} />;
-      }}
-    />
+return (
+  <>
+  <PageTemplate
+    title="Upcoming Movies"
+    movies={movies}
+    action={(movie) => {
+      return (
+        <>
+          <AddToToWatchListIcon movie={movie} />  {/* New Watchlist icon */}
+        </>
+      );
+    }}
+  />
+  {/* Pagination component */}
+  <Pagination
+  count={totalPages}
+  page={page}
+  onChange={handlePageChange}
+  color="primary"
+  showFirstButton
+  showLastButton
+  style={{ paddingBottom: '20px', paddingTop: '20px', justifyContent: 'center', display: 'flex' }}
+/>
+</>
   );
 };
 export default UpcomingMoviesPage;
