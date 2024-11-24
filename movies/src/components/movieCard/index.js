@@ -22,11 +22,14 @@ import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 export default function MovieCard({ movie, action }) { 
   const { favorites, addToFavorites } = useContext(MoviesContext);
 
-  if (favorites.find((id) => id === movie.id)) {
-    movie.favorite = true;
-  } else {
-    movie.favorite = false
-  }
+  const isFavorite = favorites.includes(movie.id);
+
+
+  // if (favorites.find((id) => id === movie.id)) {
+  //   movie.favorite = true;
+  // } else {
+  //   movie.favorite = false
+  // }
 
   const handleAddToFavorite = (e) => {
     e.preventDefault();

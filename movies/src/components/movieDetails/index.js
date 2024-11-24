@@ -1,16 +1,23 @@
-// import React from "react";
+import React, { useState } from "react";
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardHeader from "@mui/material/CardHeader";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import StarRate from "@mui/icons-material/StarRate";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
-import React, { useState } from "react";
 import Drawer from "@mui/material/Drawer";
-import MovieReviews from "../movieReviews"
+import MovieReviews from "../movieReviews";
+import { getRecommendations } from "../../api/tmdb-api";
+import { useQuery } from "react-query";
+import Spinner from "../spinner";
+import { Link } from "react-router-dom";
 
+const chipStyle = { margin: 0.5 };
 
 const root = {
     display: "flex",
@@ -27,6 +34,20 @@ const chip = { margin: 0.5 };
 const MovieDetails = ({ movie }) => {  // Don't miss this!
  const [drawerOpen, setDrawerOpen] = useState(false);
 
+
+
+//  const { data, error, isLoading, isError } = useQuery(['recommendations',  {id: movie.id }],  getRecommendations );
+ 
+ 
+ 
+//  if (isLoading) {
+//   return <Spinner />;
+// }
+
+// if (isError) {
+//   return <h1>{error.message}</h1>;
+// }
+
   return (
     <>
       <Typography variant="h5" component="h3">
@@ -37,16 +58,13 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         {movie.overview}
       </Typography>
 
-      <Paper 
-        component="ul" 
-        sx={{...root}}
-      >
+      <Paper component="ul" sx={{ display: "flex", flexWrap: "wrap", listStyle: "none", padding: 1.5, margin: 0 }}>
         <li>
-          <Chip label="Genres" sx={{...chip}} color="primary" />
+          <Chip label="Genres" sx={chipStyle} color="primary" />
         </li>
         {movie.genres.map((g) => (
           <li key={g.name}>
-            <Chip label={g.name} sx={{...chip}} />
+            <Chip label={g.name} sx={chipStyle} />
           </li>
         ))}
       </Paper>

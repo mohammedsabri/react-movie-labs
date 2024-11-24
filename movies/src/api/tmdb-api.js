@@ -128,4 +128,133 @@ export const getMovie = (args) => {
 
   }
 
+  // export const getRecommendations = (movieId, page = 1) => {
+  //   return fetch(
+  //     `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=${page}`
+  //   )
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error(response.json().message);
+  //       }
+  //       return response.json();
+  //     })
+  //     .catch((error) => {
+  //       throw error;
+  //     });
+  // };
+
+  export const getPerson = (args) => {
+    const [, idPart] = args.queryKey;
+    const { id } = idPart;
+    return fetch(
+      `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    ).then((response) => {
+      if (!response.ok) {
+        throw new Error(response.json().message);
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error
+  });
+  };
+
+
+  export const getPopularPeople = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    ).then((response) => {
+      if (!response.ok) {
+        throw new Error(response.json().message);
+      }
+      return response.json();
+    })
+    .catch((error) => {
+       throw error
+    });
+  };
+
+  // export const getPersonImages = ({ queryKey }) => {
+  //   const [, idPart] = queryKey;
+  //   const { id } = idPart;
+  //   return fetch(
+  //     `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
+  //   ).then( (response) => {
+  //     if (!response.ok) {
+  //       throw new Error(response.json().message);
+  //     }
+  //     return response.json();
+
+  //   })
+  //   .catch((error) => {
+  //     throw error
+  //  });
+  // };
   
+  export const getMovieCredits = ({ queryKey }) => {
+    const [, idPart] = queryKey;
+    const { id } = idPart;
+  
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`,
+    )
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((error) => {
+            throw new Error(error.status_message || "Something went wrong");
+          });
+        }
+        return response.json();
+      })
+      .catch((error) => {
+        throw error;
+      });
+  };
+
+  export const getPersonWithCredits = async ({ queryKey }) => {
+    const [_key, { id }] = queryKey;
+    const response = await fetch(`https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&append_to_response=combined_credits`);
+    if (!response.ok) throw new Error('Network response was not ok');
+    return response.json();
+  };
+
+  // export const getPersonDetails = ({ queryKey }) => {
+  //   const [, idPart] = queryKey;
+  //   const { id } = idPart;
+  
+  //   return fetch(
+  //     `https://api.themoviedb.org/3/person/${id}?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`,
+  //   )
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         return response.json().then((error) => {
+  //           throw new Error(error.status_message || "Something went wrong");
+  //         });
+  //       }
+  //       return response.json();
+  //     })
+  //     .catch((error) => {
+  //       throw error;
+  //     });
+  // };
+  
+
+  // export const getPersonMovies = ({ queryKey }) => {
+  //   const [, idPart] = queryKey;
+  //   const { id } = idPart;
+  
+  //   return fetch(
+  //     `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`,
+  //   )
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         return response.json().then((error) => {
+  //           throw new Error(error.status_message || "Something went wrong");
+  //         });
+  //       }
+  //       return response.json();
+  //     })
+  //     .catch((error) => {
+  //       throw error;
+  //     });
+  // };

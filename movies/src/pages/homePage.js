@@ -1,10 +1,10 @@
 import React, { useState} from "react";
 import { getMovies } from "../api/tmdb-api";
-import PageTemplate from '../components/templateMovieListPage';
+import PageTemplate from '../components/templateMovieListPage/index';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
-import Pagination from "@mui/material/Pagination";
+// import Pagination from "@mui/material/Pagination";
 
 const HomePage = () => {
   const [page, setPage] = useState(1); // State to manage pagination
@@ -24,7 +24,7 @@ const HomePage = () => {
   }
 
   const movies = data.results;
-  const totalPages = data.total_pages; // Extract total pages from API response
+  // const totalPages = data.total_pages; // Extract total pages from API response
 
   
  
@@ -40,7 +40,7 @@ const HomePage = () => {
         action={(movie) => <AddToFavoritesIcon movie={movie} />}
       />
       {/* Pagination component */}
-      <Pagination
+      {/* <Pagination
         count={totalPages}
         page={page}
         onChange={handlePageChange}
@@ -53,7 +53,7 @@ const HomePage = () => {
           justifyContent: "center",
           display: "flex",
         }}
-      />
+      /> */}
     </>
   );
 };

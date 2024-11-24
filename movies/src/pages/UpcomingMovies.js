@@ -4,7 +4,7 @@ import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToToWatchListIcon from '../components/cardIcons/addToToWatchlist';
-import Pagination from "@mui/material/Pagination";
+// import Pagination from "@mui/material/Pagination";
 
 const UpcomingMoviesPage = () => {
   const [page, setPage] = useState(1);
@@ -43,7 +43,7 @@ return (
     }}
   />
   {/* Pagination component */}
-  <Pagination
+  {/* <Pagination
   count={totalPages}
   page={page}
   onChange={handlePageChange}
@@ -51,7 +51,7 @@ return (
   showFirstButton
   showLastButton
   style={{ paddingBottom: '20px', paddingTop: '20px', justifyContent: 'center', display: 'flex' }}
-/>
+/> */}
 </>
   );
 };

@@ -12,7 +12,11 @@ import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import UpcomingMoviesPage from "./pages/UpcomingMovies";
 import PopularMoviesPage from "./pages/PopularMoviesPage.js";
+// import RecommendationsMoviesPage from "./pages/RecommendationsMoviesPage";
 import TrendingMoviesPage from './pages/TrendingMoviesPage';
+import NowplayingMovies  from "./pages/NowPlayingMoviesPage";
+import ActorsPage from "./pages/actorsPage.js";
+import ActorDetailsPage from "./pages/actorDetailsPage.js";
 
 
 
@@ -131,11 +135,14 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/movies/UpcomingMovies" element={<UpcomingMoviesPage />} />
             <Route path="/movies/trending" element={<TrendingMoviesPage />} />          
-            <Route path="/movies/UpcomingMovies" element={<UpcomingMoviesPage />} />
+            <Route path="/movies/NowPlaying" element={<NowplayingMovies />} />
             <Route path="*" element={ <Navigate to="/" /> } />
             <Route path="/movies/popular" element={<PopularMoviesPage />} />
-
+            {/* <Route path="/movies/recommendations" element={<RecommendationsMoviesPage/>} /> */}
             <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
+            <Route path="/people" element={<ActorsPage />} />
+            <Route path="/actors/:id" element={<ActorDetailsPage />} />
+
 
           </Routes>
         </MoviesContextProvider>
