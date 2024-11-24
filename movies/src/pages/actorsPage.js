@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getPopularPeople } from "../api/tmdb-api";
 import PeopleListPageTemplate from "../components/templatePeoplePage/templatePeoplePage";
 
+
 const ActorsPage = () => {
   const navigate = useNavigate();
   const { data: popularActors, isLoading, isError, error } = useQuery(
@@ -26,6 +27,7 @@ const ActorsPage = () => {
       setSelectedActor(popularActors.results[0]);
     }
   }, [popularActors]);
+
 
   // Handle actor click to navigate to details
   const handleActorClick = (actor) => {
@@ -122,11 +124,13 @@ const ActorsPage = () => {
               View Details
             </button>
           </div>
+          
         ))}
       </div>
 
       
     </div>
+    
   );
 };
 

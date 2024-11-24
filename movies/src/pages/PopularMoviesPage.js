@@ -4,7 +4,7 @@ import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites';
-// import Pagination from "@mui/material/Pagination";
+import Pagination from "@mui/material/Pagination";
 
 const PopularMoviesPage = () => {
   const [page, setPage] = useState(1);
@@ -22,7 +22,7 @@ const PopularMoviesPage = () => {
   }
 
   const movies = data.results;
-  // const totalPages = data.total_pages;
+  const totalPages = data.total_pages;
 
   // Handle page change
   const handlePageChange = (event, value) => {
@@ -36,7 +36,7 @@ const PopularMoviesPage = () => {
         movies={movies}
         action={(movie) => <AddToFavoritesIcon movie={movie} />}
       />
-       {/* <Pagination
+       <Pagination
         count={totalPages}
         page={page}
         onChange={handlePageChange}
@@ -44,7 +44,7 @@ const PopularMoviesPage = () => {
         showFirstButton
         showLastButton
         style={{ paddingBottom: '20px', paddingTop: '20px', justifyContent: 'center', display: 'flex' }}
-      /> */}
+      />
     </>
    
     

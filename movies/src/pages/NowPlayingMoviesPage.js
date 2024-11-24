@@ -4,7 +4,7 @@ import { getNowplayingMovies } from "../api/tmdb-api";
 import PageTemplate from "../components/templateMovieListPage";
 import Spinner from "../components/spinner";
 import AddToToWatchListIcon from "../components/cardIcons/addToToWatchlist";
-// import Pagination from "@mui/material/Pagination";
+import Pagination from "@mui/material/Pagination";
 
 const NowplayingMoviesPage  = () => {
   const [page, setPage] = useState(1); // State for pagination
@@ -63,7 +63,7 @@ const NowplayingMoviesPage  = () => {
         )}
       />
       {/* Pagination component */}
-      {/* <Pagination
+      <Pagination
         count={totalPages}
         page={page}
         onChange={handlePageChange}
@@ -76,7 +76,7 @@ const NowplayingMoviesPage  = () => {
           justifyContent: "center",
           display: "flex",
         }}
-      /> */}
+      />
     </>
   );
 };
