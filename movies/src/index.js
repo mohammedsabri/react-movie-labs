@@ -18,6 +18,7 @@ import NowplayingMovies  from "./pages/NowPlayingMoviesPage.js";
 import ActorsPage from "./pages/actorsPage.js";
 import ActorDetailsPage from "./pages/actorDetailsPage.js";
 import MovieDetailsPage from "./pages/movieDetailsPage.js";
+import NowplayingMoviesPage from "./pages/NowPlayingMoviesPage.js";
 
 
 
@@ -136,7 +137,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/movies/UpcomingMovies" element={<UpcomingMoviesPage />} />
             <Route path="/movies/trending" element={<TrendingMoviesPage />} />          
-            <Route path="/movies/NowPlaying" element={<NowplayingMovies />} />
+            <Route path="/movies/NowPlaying" element={<NowplayingMoviesPage />} />
             <Route path="*" element={ <Navigate to="/" /> } />
             <Route path="/movies/popular" element={<PopularMoviesPage />} />
             {/* <Route path="/movies/recommendations" element={<RecommendationsMoviesPage/>} /> */}

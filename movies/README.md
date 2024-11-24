@@ -1,70 +1,84 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#  React Assignment: My Movies Web App  
+Developed by: Mohammed Sabri  
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Overview  
 
-### `npm start`
+This ReactJS application is a comprehensive web platform offering users detailed insights into movies and prominent figures in the film industry. By leveraging dynamic APIs, it provides real-time information on trending films, celebrated personalities, and a variety of related content.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features  
+## Movies  
+Popular Movies: Showcases a collection of the most popular movies trending globally.
+Trending Movies: Highlights the latest movies gaining widespread attention worldwide.
+Upcoming Movies: Features a list of movies set for release soon or currently debuting in theaters.
+Now Playing Movies: Displays movies actively screening in theaters.
+Movie Details: Provides in-depth information about a specific movie, including cast, synopsis, and more.
+Favorites: Enables users to bookmark and access their personal list of favorite movies.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## People  
+7. **Popular People**: Showcases renowned actors, directors, and other prominent film industry figures. 
+8. **Actor Details**:Provides detailed profiles of individuals, including biographies and images.  
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+New Templates  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+TemplatePeopleListPage: A page template designed for showcasing a list of popular individuals in the film industry.
+PeopleDetails: A component dedicated to displaying detailed information about a specific person.
+PeopleList: A component for rendering a comprehensive list of notable individuals.
+FilterPeopleCard: A component that enables filtering and searching for individuals based on specific criteria.
+HeaderPerson: A custom header tailored for displaying individual person details.
+TemplatePersonPage: A page template focused on presenting detailed information about a single individual.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+API Endpoints  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The app integrates with multiple API endpoints to deliver real-time data, including:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Popular Movies API: Fetches information about the most popular movies currently trending.
+Popular People API: Retrieves details about notable personalities in the film industry.
+Trending Movies API: Supplies up-to-date information on recently trending movies.
+Upcoming Movies API: Delivers data about movies set for future release.
+Person API: Provides comprehensive details about a specific individual in the film industry.
+Person Images API: Retrieves visual content featuring actors, directors, and other notable figures.
+Pagination API: Enables smooth navigation through extensive datasets for a seamless user experience.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Routing
 
-## Learn More
+The app leverages React Router to seamlessly navigate between the following routes:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+/movies/trending: Highlights currently trending movies.
+/movies/upcoming: Features upcoming movie releases.
+/movies/now-playing: Showcases movies currently screening in theaters.
+/movies/popular: Displays a list of the most popular movies.
+/people: Showcases notable figures in the film industry.
+/people/:id: Provides detailed information about a specific individual.
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Automated Testing Requirements
 
-### Code Splitting
+Ensure the following tools are installed before running tests or launching the application:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Node.js: Essential for setting up and running the development environment.
+npm: Used to manage project dependencies and execute scripts.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Independent Learning
 
-### Making a Progressive Web App
+During the development of the app, I explored pagination as a new feature. Its implementation was achieved through research and by following online tutorials
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

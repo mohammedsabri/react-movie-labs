@@ -70,9 +70,9 @@ export default function FilterMoviesCard(props) {
       }} 
       variant="outlined">
       <CardContent>
-        <Typography variant="h5" component="h1">
+        <Typography variant="h9" component="h1">
           <SearchIcon fontSize="large" />
-          Filter the movies.
+          Filter movies.
         </Typography>
 
          <TextField
@@ -85,7 +85,7 @@ export default function FilterMoviesCard(props) {
       onChange={handleTextChange}
     />
         <FormControl sx={{...formControl}}>
-          <InputLabel id="genre-label">Genre</InputLabel>
+          <InputLabel id="genre-label"></InputLabel>
 
             <Select
     labelId="genre-label"
