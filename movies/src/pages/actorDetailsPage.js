@@ -1,7 +1,9 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import { getPersonWithCredits } from '../api/tmdb-api'; // Updated to include combined_credits
+import { getMovieCredits, getPersonWithCredits } from '../api/tmdb-api'; // Updated to include combined_credits
+import { Link } from "react-router-dom";
+
 
 const ActorDetailsPage = () => {
   const { id } = useParams();
@@ -11,8 +13,12 @@ const ActorDetailsPage = () => {
     getPersonWithCredits // Fetch person details with combined_credits
   );
 
+
+
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error.message}</div>;
+
+
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
@@ -92,6 +98,14 @@ const ActorDetailsPage = () => {
           )}
         </div>
       )}
+      <h2>Movies</h2>
+      <ul>
+        {getMovieCredits.cast.map((movie) => (
+          <li key={movie.id}>
+            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

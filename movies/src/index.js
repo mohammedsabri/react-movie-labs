@@ -13,10 +13,11 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 import UpcomingMoviesPage from "./pages/UpcomingMovies";
 import PopularMoviesPage from "./pages/PopularMoviesPage.js";
 // import RecommendationsMoviesPage from "./pages/RecommendationsMoviesPage";
-import TrendingMoviesPage from './pages/TrendingMoviesPage';
-import NowplayingMovies  from "./pages/NowPlayingMoviesPage";
+import TrendingMoviesPage from './pages/TrendingMoviesPage.js';
+import NowplayingMovies  from "./pages/NowPlayingMoviesPage.js";
 import ActorsPage from "./pages/actorsPage.js";
 import ActorDetailsPage from "./pages/actorDetailsPage.js";
+import MovieDetailsPage from "./pages/movieDetailsPage.js";
 
 
 
@@ -142,6 +143,7 @@ const App = () => {
             <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
             <Route path="/people" element={<ActorsPage />} />
             <Route path="/actors/:id" element={<ActorDetailsPage />} />
+            <Route path="/movies/:id" element={<MovieDetailsPage />} />
 
 
           </Routes>
