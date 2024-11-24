@@ -17,6 +17,7 @@ import ActorsPage from "./pages/actorsPage.js";
 import ActorDetailsPage from "./pages/actorDetailsPage.js";
 import MovieDetailsPage from "./pages/movieDetailsPage.js";
 import NowplayingMoviesPage from "./pages/NowPlayingMoviesPage.js";
+import WatchListPage from "./pages/WatchListPage.js";
 
 
 
@@ -130,6 +131,7 @@ const App = () => {
         <MoviesContextProvider>
           <Routes>
             <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
+            <Route path="/movies/watchlist" element={<WatchListPage />} />
             <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/" element={<HomePage />} />

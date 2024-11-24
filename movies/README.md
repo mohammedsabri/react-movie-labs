@@ -26,7 +26,19 @@ Favorites: Enables users to bookmark and access their personal list of favorite 
 
 ---
 
-New Templates  
+## New Templates  
+
+Filter Movie Card:Improved image styling with an overlay text and Grouped search and filter inputs inside a Paper with consistent padding.
+Enhanced spacing and layout for better readability
+Used better font weights and sizes for hierarchy and readability.
+SiteHeader: 
+Used Material-UI's palette for colors, like primary and grey[200]
+Added hover effects for desktop buttons
+Applied consistent margins, paddings, and typography styles across both mobile and desktop views
+Added a subtle border underline effect on hover for desktop navigation
+Increased spacing between MenuItems for better touch accessibility.
+
+
 
 TemplatePeopleListPage: A page template designed for showcasing a list of popular individuals in the film industry.
 PeopleDetails: A component dedicated to displaying detailed information about a specific person.

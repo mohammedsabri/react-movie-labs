@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { getNowplayingMovies } from "../api/tmdb-api";
 import PageTemplate from "../components/templateMovieListPage";
 import Spinner from "../components/spinner";
-import AddToToWatchListIcon from "../components/cardIcons/addToToWatchlist";
+import AddToWatchListIcon from "../components/cardIcons/addToWatchlist";
 import Pagination from "@mui/material/Pagination";
 
 const NowplayingMoviesPage  = () => {
@@ -58,7 +58,7 @@ const NowplayingMoviesPage  = () => {
         movies={movies}
         action={(movie) => (
           <>
-            <AddToToWatchListIcon movie={movie} />
+            <AddToWatchListIcon movie={movie} />
           </>
         )}
       />
