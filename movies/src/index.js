@@ -131,7 +131,6 @@ const App = () => {
         <MoviesContextProvider>
           <Routes>
             <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
-            <Route path="/movies/watchlist" element={<WatchListPage />} />
             <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/" element={<HomePage />} />
@@ -144,6 +143,8 @@ const App = () => {
             <Route path="/people" element={<ActorsPage />} />
             <Route path="/actors/:id" element={<ActorDetailsPage />} />
             <Route path="/movies/:id" element={<MovieDetailsPage />} />
+            <Route path="/movies/watchlist" element={<WatchListPage />} />
+
 
 
           </Routes>
