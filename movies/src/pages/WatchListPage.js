@@ -6,6 +6,8 @@ import { Typography, Box } from "@mui/material";
 const WatchlistPage = () => {
   const [watchlist, setWatchlist] = useState([]);
 
+
+ 
   // Load watchlist from localStorage
   useEffect(() => {
     try {
