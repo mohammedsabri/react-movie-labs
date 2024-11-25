@@ -38,8 +38,6 @@ Applied consistent margins, paddings, and typography styles across both mobile a
 Added a subtle border underline effect on hover for desktop navigation
 Increased spacing between MenuItems for better touch accessibility.
 
-
-
 TemplatePeopleListPage: A page template designed for showcasing a list of popular individuals in the film industry.
 PeopleDetails: A component dedicated to displaying detailed information about a specific person.
 PeopleList: A component for rendering a comprehensive list of notable individuals.
