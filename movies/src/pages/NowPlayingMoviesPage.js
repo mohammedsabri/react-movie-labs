@@ -24,24 +24,7 @@ const NowplayingMoviesPage  = () => {
     return <h1>{error.message}</h1>;
   }
 
-  // if (isError) {
-  //   console.error(error);
-  //   return (
-  //     <div style={{ textAlign: "center", padding: "2rem" }}>
-  //       <h1>Error Loading Data</h1>
-  //       <p>{error.message || "An unexpected error occurred. Please try again later."}</p>
-  //     </div>
-  //   );
-  // }
-
-  // if (!data || !data.results || data.results.length === 0) {
-  //   return (
-  //     <div style={{ textAlign: "center", padding: "2rem" }}>
-  //       <h1>No Now playing Movies Found</h1>
-  //       <p>Check back later for the latest now playin movies.</p>
-  //     </div>
-  //   );
-  // }
+ 
 
   const movies = data.results; // Extract movies from API response
   const totalPages = data.total_pages; // Extract total pages for pagination

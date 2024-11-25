@@ -36,17 +36,6 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
 
 
 
-//  const { data, error, isLoading, isError } = useQuery(['recommendations',  {id: movie.id }],  getRecommendations );
- 
- 
- 
-//  if (isLoading) {
-//   return <Spinner />;
-// }
-
-// if (isError) {
-//   return <h1>{error.message}</h1>;
-// }
 
   return (
     <>
